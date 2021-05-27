@@ -1,0 +1,4 @@
+- SD-Reader zum laufen kriegen
+- Font zum laufen kriegen
+- Bild direkt auf SD-Karte schreiben um speicher zu sparen
+- überlegen wie man ohne mc neu zu starten von CAPTURING zu MENU kommt
