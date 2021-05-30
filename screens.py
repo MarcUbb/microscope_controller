@@ -59,7 +59,7 @@ def draw_menu(display):
         display.draw_rectangle(i*int(constants.HEIGHT/4),0,int(constants.HEIGHT/4), constants.WIDTH-constants.HEIGHT, constants.WHITE)   
 
     display.draw_text(20,50, "take", constants.FONT, constants.WHITE, landscape=True)
-    display.draw_text(40,65, "image", constants.FONT, constants.WHITE, landscape=True)
+    display.draw_text(40,55, "image", constants.FONT, constants.WHITE, landscape=True)
     display.draw_text(85,60, "+", constants.FONT, constants.WHITE, landscape=True)
     display.draw_text(85,25, "-", constants.FONT, constants.WHITE, landscape=True)
     display.draw_text(145,75, "zoom: " + str(constants.ZOOM) + "x", constants.FONT, constants.WHITE, landscape=True)
@@ -83,7 +83,7 @@ def draw_vacuum_request(display):
 
     display.draw_rectangle(100,120, 30, 80, constants.WHITE)
 
-    display.draw_text(60, 300, "Make sure the chamber is vacuumed!", constants.FONT, constants.WHITE, landscape=True)
+    display.draw_text(60, 250, "Make sure the chamber is vacuumed!", constants.FONT, constants.WHITE, landscape=True)
     display.draw_text(110,190, "confirm", constants.FONT, constants.WHITE, landscape=True)
 
 
@@ -104,7 +104,7 @@ def draw_darkening_request(display):
 
     display.draw_rectangle(100,120, 30, 80, constants.WHITE)
 
-    display.draw_text(60, 310, "Make sure the chamber is darkened!", constants.FONT, constants.WHITE, landscape=True)
+    display.draw_text(60, 250, "Make sure the chamber is darkened!", constants.FONT, constants.WHITE, landscape=True)
     display.draw_text(110,190, "confirm", constants.FONT, constants.WHITE, landscape=True)
 
 
@@ -126,7 +126,7 @@ def draw_electronics_test_request(display):
     display.draw_rectangle(100,130, 30, 30, constants.WHITE)
     display.draw_rectangle(100,170, 30, 30, constants.WHITE)
 
-    display.draw_text(60, 260, "Do you want to conduct an electronics test?", constants.FONT, constants.WHITE, landscape=True)
+    display.draw_text(60, 270, "Do you want to conduct an electronics test?", constants.FONT, constants.WHITE, landscape=True)
     display.draw_text(110,195, "yes", constants.FONT, constants.WHITE, landscape=True)
     display.draw_text(110,155, "no", constants.FONT, constants.WHITE, landscape=True)
 

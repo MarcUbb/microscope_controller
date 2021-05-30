@@ -15,7 +15,7 @@ display = screens.init_screen()
 touchscreen = touch.init_touch()
 #sd_card = storage.init_sd()
 
-
+  
 # checks the value of the constants.STATE variable and performs actions accordingly
 while True:
 
@@ -90,7 +90,7 @@ while True:
 
     elif constants.STATE == "CAPTURED":
         if constants.PAST_STATE != "CAPTURED":
-            # adds "speichern" - button to interface
+            # adds "save" - button to interface
             screens.draw_captured(display)
         constants.PAST_STATE = "CAPTURED"
 
@@ -99,4 +99,3 @@ while True:
         storage.save_image()
         #changes state back to captured to make sure the interface still works
         constants.STATE = "CAPTURED"
-
