@@ -43,27 +43,12 @@ CLK_TOUCH = machine.Pin(18)
 MOSI_TOUCH = machine.Pin(23)
 MISO_TOUCH = machine.Pin(19)
 
-# relay pins
-# anode
-ESP32_1 = machine.Pin(32, machine.Pin.OUT) 
-# cathode
-ESP32_2 = machine.Pin(33, machine.Pin.OUT)
-#faraday cage
-ESP32_5 = machine.Pin(27, machine.Pin.OUT)
-#photomultiplier
-ESP32_6 = machine.Pin(12, machine.Pin.OUT)
-
 # analog output pins (for deflector plates)
 # x plates GPIO25
-ESP32_3 = machine.DAC(machine.Pin(25), bits=8) 
+ESP32_3 = machine.PWM(machine.Pin(25))
+ESP32_3.freq(50)
 # y plates GPIO26
-ESP32_4 = machine.DAC(machine.Pin(26), bits=8) 
-
+ESP32_4 = machine.PWM(machine.Pin(26)) 
+ESP32_4.freq(50)
 # photomultiplier input
 PHOTO_MUL = machine.ADC(machine.Pin(36)) 
-
-# sd card reader pins
-CS_SD = machine.Pin(22)
-CLK_SD = machine.Pin(15)
-MOSI_SD = machine.Pin(21)
-MISO_SD = machine.Pin(2)

@@ -13,7 +13,6 @@ control.supply_init()
 # initiates devices
 display = screens.init_screen()
 touchscreen = touch.init_touch()
-#sd_card = storage.init_sd()
 
   
 # checks the value of the constants.STATE variable and performs actions accordingly
