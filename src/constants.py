@@ -45,10 +45,10 @@ MISO_TOUCH = machine.Pin(19)
 
 # analog output pins (for deflector plates)
 # x plates GPIO25
-ESP32_3 = machine.PWM(machine.Pin(25))
+ESP32_3 = machine.PWM(machine.Pin(32))
 ESP32_3.freq(50)
 # y plates GPIO26
-ESP32_4 = machine.PWM(machine.Pin(26)) 
+ESP32_4 = machine.PWM(machine.Pin(33)) 
 ESP32_4.freq(50)
 # photomultiplier input
 PHOTO_MUL = machine.ADC(machine.Pin(36)) 

@@ -5,7 +5,6 @@ import time
 import screens
 
 def electronics_test(display):
-    control.esp32_1_on()
     i = 0
     while i < 101:
         screens.draw_test_progress(display, i)
@@ -15,18 +14,15 @@ def electronics_test(display):
 
 def capture(display): # uses methodes from control and sensor date to create via "draw value" functionan image on the screen, returns 2d array of values (represents image)
     f = open('image.csv', 'w')
-    control.esp32_1_on()
     x = 0
     while x < constants.HEIGHT - 2:
         y = 0
         while y < constants.HEIGHT - 2:
-            control.esp32_3(x)
-            control.esp32_4(y)
-            time.sleep(0.005)
-            control.esp32_2_on()
+            control.esp32_3(x*4)
+            control.esp32_4(y*4)
+            #time.sleep(0.005)
             value = control.photo_mul_read()
-            time.sleep(0.005)
-            control.esp32_2_off()
+            #time.sleep(0.005)
             screens.draw_value(display, x, y, value)
             
             y += 1
