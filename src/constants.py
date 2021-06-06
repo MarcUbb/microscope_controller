@@ -46,6 +46,7 @@ MISO_TOUCH = machine.Pin(19)
 
 # analog output pins (for deflector plates)
 # x plates GPIO25
+<<<<<<< HEAD
 Pin0_1 = machine.Pin(32)
 Pin0_2 = machine.Pin(33)
 Pin0_3 = machine.Pin(25)
@@ -57,5 +58,12 @@ Pin1_2 = machine.Pin(14)
 Pin1_3 = machine.Pin(15)
 Pin1_4 = machine.Pin(2)
 ESP32_4 = stepper.Stepper(pin1 = Pin1_1, pin2 = Pin1_2, pin3 = Pin1_3, pin4 = Pin1_4, delay = 1)
+=======
+ESP32_3 = machine.PWM(machine.Pin(32))
+ESP32_3.freq(50)
+# y plates GPIO26
+ESP32_4 = machine.PWM(machine.Pin(33)) 
+ESP32_4.freq(50)
+>>>>>>> 4674ef71835ef647dbca7d47edfa1ec084d77d9a
 # photomultiplier input
 PHOTO_MUL = machine.ADC(machine.Pin(36)) 

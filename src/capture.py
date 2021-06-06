@@ -6,11 +6,14 @@ import screens
 import random
 
 def electronics_test(display):
+<<<<<<< HEAD
     control.esp32_1_on()
     
     x = random.randint(0, constants.HEIGHT - 2 )
     y = random.randint(0, constants.HEIGHT - 2 )
 
+=======
+>>>>>>> 4674ef71835ef647dbca7d47edfa1ec084d77d9a
     i = 0
     while i < 101:
         if i == 10:
@@ -52,10 +55,18 @@ def capture(display): # uses methodes from control and sensor date to create via
         y = 0
 
         while y < constants.HEIGHT - 2:
+<<<<<<< HEAD
             
             constants.ESP32_3.step(1, dir)
             value = control.photo_mul_read()
 
+=======
+            control.esp32_3(x*4)
+            control.esp32_4(y*4)
+            #time.sleep(0.005)
+            value = control.photo_mul_read()
+            #time.sleep(0.005)
+>>>>>>> 4674ef71835ef647dbca7d47edfa1ec084d77d9a
             screens.draw_value(display, x, y, value)
             
             y += 1

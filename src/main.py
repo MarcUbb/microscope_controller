@@ -98,3 +98,4 @@ while True:
         storage.save_image()
         #changes state back to captured to make sure the interface still works
         constants.STATE = "CAPTURED"
+  
