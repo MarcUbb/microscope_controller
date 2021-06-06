@@ -1,14 +1,6 @@
 import machine
 import constants
 
-def esp32_3(value): # value must be between 0 and 1023
-    constants.ESP32_3.duty(value)
-    return
-
-def esp32_4(value): # value must be between 0 and 1023
-    constants.ESP32_4.duty(value)
-    return
-
 
 def photo_mul_read():
     return(constants.PHOTO_MUL.read())

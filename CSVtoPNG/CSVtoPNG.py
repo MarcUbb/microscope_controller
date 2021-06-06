@@ -26,7 +26,7 @@ def application():
     menubar = Menu(window)
     filemenu = Menu(menubar, tearoff = 0)
     filemenu.add_command(label = "Open", command = browse_files)
-    filemenu.add_command(label = "Save as...", command = save_file, state = DISABLED)
+    filemenu.add_command(label = "Save as...", command = save_file)
 
     menubar.add_cascade(label = "File", menu = filemenu)
 

@@ -1,6 +1,7 @@
 import ili9341
 import xglcd_font
 import machine
+import stepper
 
 # colors as ili9341.color565 object
 WHITE = ili9341.color565(255,255,255)
@@ -45,10 +46,16 @@ MISO_TOUCH = machine.Pin(19)
 
 # analog output pins (for deflector plates)
 # x plates GPIO25
-ESP32_3 = machine.PWM(machine.Pin(25))
-ESP32_3.freq(50)
+Pin0_1 = machine.Pin(32)
+Pin0_2 = machine.Pin(33)
+Pin0_3 = machine.Pin(25)
+Pin0_4 = machine.Pin(26)
+ESP32_3 = stepper.Stepper(pin1 = Pin0_1, pin2 = Pin0_2, pin3 = Pin0_3, pin4 = Pin0_4, delay = 1)
 # y plates GPIO26
-ESP32_4 = machine.PWM(machine.Pin(26)) 
-ESP32_4.freq(50)
+Pin1_1 = machine.Pin(27)
+Pin1_2 = machine.Pin(14)
+Pin1_3 = machine.Pin(15)
+Pin1_4 = machine.Pin(2)
+ESP32_4 = stepper.Stepper(pin1 = Pin1_1, pin2 = Pin1_2, pin3 = Pin1_3, pin4 = Pin1_4, delay = 1)
 # photomultiplier input
 PHOTO_MUL = machine.ADC(machine.Pin(36)) 
