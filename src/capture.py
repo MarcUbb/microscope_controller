@@ -52,11 +52,15 @@ def capture(display): # uses methodes from control and sensor date to create via
 
         while y < constants.HEIGHT - 2:
             
-            constants.ESP32_3.step(1, dir)
+            constants.ESP32_4.step(1, dir)
             value = control.photo_mul_read()
-
-            screens.draw_value(display, x, y, value)
             
+            if dir == 1:
+                screens.draw_value(display, x, y, value)
+            else:
+                screens.draw_value(display, x, constants.HEIGHT - 2 - y, value)
+                
+                
             y += 1
 
             if y < constants.HEIGHT - 2:
@@ -65,6 +69,13 @@ def capture(display): # uses methodes from control and sensor date to create via
                 f.write(str(value)) # writes no "," if its the last value in the line
             
         if constants.ABORT_CAPTURE == True:
+            constants.ESP32_3.step(x, direction = -1)
+            
+            if dir == 1:
+                constants.ESP32_4.step(y, direction = -1)
+            else:
+                constants.ESP32_4.step(constants.HEIGHT - 2 - y, direction = 1)
+                
             f.close()
             return(1)
         
@@ -73,12 +84,12 @@ def capture(display): # uses methodes from control and sensor date to create via
         else:
             dir = 1
 
-        constants.ESP32_4.step(1, direction = 1)
+        constants.ESP32_3.step(1, direction = 1)
 
         f.write('\n')
         x += 1
 
-    constants.ESP32_4.step(constants.HEIGHT - 2, dir * (-1))
+    constants.ESP32_3.step(constants.HEIGHT - 2, dir * (-1))
 
     f.close()
     return(0)

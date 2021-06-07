@@ -6,8 +6,7 @@ def photo_mul_read():
     return(constants.PHOTO_MUL.read())
 
 def supply_init():
-    esp32_3(0)
-    esp32_4(0)
+    pass
 
 
 def stop(): # puts all the outputs on safe values and resets MC
