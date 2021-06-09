@@ -15,7 +15,6 @@ default_path = os.getcwd() + "\image.png"
 window = Tk()
 image_label = Label(window, width = 640, height = 480)
 
-
 def application():
     global window
     global image_label
