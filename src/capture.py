@@ -73,8 +73,8 @@ def capture(display):
         f (_io.BufferedWriter): holds file object in which the image is written in csv format
         x (int): stores x coordinate of image
         dir (int): stores direction
-        y (int):
-        value (int): 
+        y (int): stores y direction of image
+        value (int): stores ADC reading from photomultiplier
 
 
     Returns: -

@@ -15,7 +15,9 @@ default_path = os.getcwd() + "\image.png"
 window = Tk()
 image_label = Label(window, width = 640, height = 480)
 
-def application():
+
+
+def application(): # creates application with tkinter and calls functions according to user input
     global window
     global image_label
     window.geometry("640x500")
@@ -41,10 +43,13 @@ def application():
     window.mainloop()
 
 
-def open_github():
+
+def open_github(): # opens github page of project
     webbrowser.open("https://github.com/MarcUbb/microscope_controller")
 
-def load_image():
+
+
+def load_image(): # opens csv and interprets and displays it with matplotlib, also saves image to default directory
     global csv_path
     global window
     global image_label
@@ -75,7 +80,8 @@ def load_image():
     image_label.image = img
 
 
-def save_image():
+
+def save_image(): # saves image by moving it from default directory to chosen directory
     global default_path
     global png_path
 
@@ -85,7 +91,8 @@ def save_image():
     shutil.move(default_path, png_path)
 
 
-def browse_files():
+
+def browse_files(): # opens browser dialog to choose a csv file to be opened with "load_image" function
     filepath = filedialog.askopenfilename(initialdir = "/", title = "Select a File", filetypes = (("CSV File","*.csv*"),("all files","*.*")))
     global csv_path 
     csv_path = filepath
@@ -94,13 +101,16 @@ def browse_files():
 
     load_image()
 
-def save_file():
+
+
+def save_file(): # opens browser dialog to choose saving directory, calls "save_image" function
     filepath = asksaveasfile(initialfile = "Untitled.png", defaultextension = ".png",filetypes = [("All Files","*.*")])
     global png_path
     png_path = filepath
 
     global save_image
     save_image()
+
 
 
 def main():
