@@ -2,11 +2,14 @@ import machine
 import constants
 
 
-def photo_mul_read():
+def photo_mul_read(): # reads photomultiplier
     return(constants.PHOTO_MUL.read())
+
+
 
 def supply_init():
     pass
+
 
 
 def stop(): # puts all the outputs on safe values and resets MC
