@@ -1,5 +1,4 @@
 import constants
-import ili9341
 import control
 import time
 import screens
@@ -79,7 +78,7 @@ def capture(display):
 
     Returns: -
     """
-    f = open('image.csv', 'w')
+    f = open(str(time.time()) + '.csv', 'w')
     x = 0
     dir = 1
 

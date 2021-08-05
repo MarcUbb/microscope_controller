@@ -1,6 +1,5 @@
 import machine
 import ili9341
-import xglcd_font
 import constants
 
 
